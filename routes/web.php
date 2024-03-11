@@ -1,31 +1,32 @@
 <?php
 
+use App\Models\ResearchDetails;
 use App\Http\Controllers\Account;
-use App\Http\Controllers\ActionlogController;
-use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\CompaniesController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DepartmentsController;
-use App\Http\Controllers\DepreciationsController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ModalController;
 use App\Http\Controllers\GroupsController;
 use App\Http\Controllers\HealthController;
-use App\Http\Controllers\ImportsController;
 use App\Http\Controllers\LabelsController;
-use App\Http\Controllers\LocationsController;
-use App\Http\Controllers\ManufacturersController;
-use App\Http\Controllers\ModalController;
+use App\Http\Controllers\ImportsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\SettingsController;
-use App\Http\Controllers\StatuslabelsController;
+use App\Http\Controllers\ActionlogController;
+use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LocationsController;
 use App\Http\Controllers\SuppliersController;
-use App\Http\Controllers\ViewAssetsController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ViewAssetsController;
+use App\Http\Controllers\DepartmentsController;
+use App\Http\Controllers\StatuslabelsController;
+use App\Http\Controllers\DepreciationsController;
+use App\Http\Controllers\ManufacturersController;
 use App\Http\Controllers\ResearchPaperController;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -532,6 +533,3 @@ Route::resource('researchpapers', ResearchPaperController::class);
 
 // Route::get('/page/researchpapers', [ResearchPaperController::class, 'index'])->name('researchpapers.index');
 
-Route::get('/page/researchpapers', function () {
-    return view('ResearchPapers.index');
-});

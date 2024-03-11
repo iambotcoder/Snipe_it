@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Api;
+use Api\ResearchDetails;
 // use Illuminate\Http\Request;
+use App\Http\Controllers\Api;
 use Illuminate\Support\Facades\Route;
 
 
@@ -1214,3 +1215,11 @@ Route::group(['prefix' => 'v1', 'middleware' => ['api', 'throttle:api']], functi
         }); // end fallback routes
 
 }); // end API routes
+
+Route::resource('ResearchDetails', 
+        Api\ResearchDetailsController::class,
+        ['names' => [
+                'index' => 'api.researchDetails.index',
+            ],
+        ]
+    ); // end consumables API routes

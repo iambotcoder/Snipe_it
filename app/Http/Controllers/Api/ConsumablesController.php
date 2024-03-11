@@ -33,7 +33,7 @@ class ConsumablesController extends Controller
         $allowed_columns = 
             [
                 'id',
-                'name',
+                'name', 
                 'order_number',
                 'min_amt',
                 'purchase_date',

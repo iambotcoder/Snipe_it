@@ -51,6 +51,7 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/web/users.php');
             require base_path('routes/web/kits.php');
             require base_path('routes/web.php');
+            require base_path('routes/web/ResearchDetails.php');
         });
     }
 
@@ -64,8 +65,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::group([
-            'middleware' => 'auth:api',
-//            'namespace' => $this->namespace, // this might also be a problem? I don't really know :/
+            // 'middleware' => 'auth:api',
+        //    'namespace' => $this->namespace, // this might also be a problem? I don't really know :/
             'prefix' => 'api',
         ], function ($router) {
             require base_path('routes/api.php');
